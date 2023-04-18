@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # 追加, q: todoだけじゃダメなの？
     # a: そうですね。todoというアプリケーションを作成したので、todoという名前のアプリケーションをインストールする必要があります。
     'todo.apps.TodoConfig'
+    # 'todo' # これでも行けた
 ]
 
 MIDDLEWARE = [

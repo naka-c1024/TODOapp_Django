@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作成</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <!-- Djangoのテンプレートタグで、CSRF（Cross-Site Request Forgery）トークンをフォームに埋め込むために使用されます。
+            Djangoは、デフォルトでCSRF保護を有効にしており、このトークンを使って、フォームの送信元が正当なものであることを確認します。
+            このタグがないと、フォームを送信しようとすると、DjangoはCSRFトークンが一致しないと判断し、エラーを返すことがあります。
+            このタグを使うことで、安全なフォーム送信が可能になります。 -->
+        {% csrf_token %}
+        <table>
+            <!-- formは、ビューから渡されたフォームオブジェクトを表します。
+                as_tableは、フォームオブジェクトのメソッドで、フォームの各フィールドをHTMLのテーブル形式でレンダリングします。
+                このメソッドを使うことで、手動で各フォームフィールドのHTMLを書くことなく、フォームを簡単に表示できます。 -->
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="送信">
+    </form>
+</body>
+</html>
