@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>詳細</title>
-</head>
-<body>
-    <h1>Todo Detail</h1>
+{% extends 'todo/base.html' %}
 
-    <div>
+{% block header %}
+<h1>Todo Detail</h1>
+{% endblock header %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
         <h2>{{task.title}}</h2>
-        <p>{{task.deadline}}</p>
         <p>{{task.description}}</p>
+        <p><small class="text-muted">{{task.deadline}}</small></p>
     </div>
-</body>
-</html>
+</div>
+<a class="btn btn-outline-secondary mt-2" href="{% url 'list' %}" role="button">戻る</a>
+{% endblock content %}
