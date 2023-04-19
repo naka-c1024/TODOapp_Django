@@ -34,4 +34,5 @@ $ source myenv/bin/activate
 ## 使用技術
 
 フロントエンド: HTML，CSS (Bootstrap)
+
 バックエンド: Python (Django)
